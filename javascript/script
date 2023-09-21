@@ -1,0 +1,33 @@
+// Initialize an array
+let myArray = [1, 2, 3, 4, 5];
+
+// Function to display the current state of the array
+function displayArray(arrayToShow) {
+  const outputElement = document.getElementById('output');
+  if (arrayToShow) {
+    outputElement.textContent = 'Array: [' + arrayToShow.join(', ') + ']';
+  } else {
+    outputElement.textContent = 'Array: [' + myArray.join(', ') + ']';
+  }
+}
+
+// Push Method
+document.getElementById('pushButton').addEventListener('click', function() {
+  myArray.push(6);
+  displayArray();
+});
+
+// Pop Method
+document.getElementById('popButton').addEventListener('click', function() {
+  myArray.pop();
+  displayArray();
+});
+
+// Slice Method
+document.getElementById('sliceButton').addEventListener('click', function() {
+  const slicedArray = myArray.slice(1, 4); // Slice elements at index 1, 2, and 3
+  displayArray(slicedArray);
+});
+
+// Initial display of the array
+displayArray();
